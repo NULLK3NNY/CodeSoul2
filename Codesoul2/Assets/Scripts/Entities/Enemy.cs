@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Enemy : Entity
 {
     GameManager gm;
     public float hp;
+    public GameObject attackCollision;
 
     private void Start()
     {
@@ -18,15 +20,16 @@ public class Enemy : Entity
 
     private void FixedUpdate()
     {
-        if (FindDistanceBetweenVectors(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position) > 2)
+        /*if (FindDistanceBetweenVectors(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position) > 2)
         {
             FollowTarget(GameObject.FindGameObjectWithTag("Player"));
         }
         else
         {
             animator.SetBool("IsMoving", false);
-        }
-        
+        }*/
+
+        FollowTarget(GameObject.FindGameObjectWithTag("Player"));
         CheckGround(isFacingRight);
     }
 
@@ -93,6 +96,14 @@ public class Enemy : Entity
         {
             gm.RewardPointsOnKill();
             Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player hit");
         }
     }
 }

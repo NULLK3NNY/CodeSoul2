@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - GameManager
   - InteractUI
+  - Wallbuy
   layers:
   - Default
   - TransparentFX

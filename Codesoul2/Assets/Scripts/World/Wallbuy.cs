@@ -10,8 +10,8 @@ public class Wallbuy : MonoBehaviour
     // Wallbuy stats
     [Header("Wallbuy Config")]
     public Weapon weapon;
-    public int cost;
-    public int ammoCost;
+    public double cost;
+    public double ammoCost;
 
     // Interaction
     bool inRange;
@@ -52,7 +52,7 @@ public class Wallbuy : MonoBehaviour
     {
         if (gm.HasPlayerGotThisWeapon(weapon))
         {
-            text = "Press and hold F to purchase ammo for " + weapon.weaponName + " for " + cost + " points!";
+            text = "Press and hold F to purchase ammo for " + weapon.weaponName + " for " + ammoCost + " points!";
         }
         else
         {
@@ -62,7 +62,7 @@ public class Wallbuy : MonoBehaviour
 
     public void Purchase(Weapon weapon)
     {
-        gm.playerScore -= cost;
+        gm.playerScore -= (int)cost;
         weapon.reservedAmmo = weapon.maxReservedAmmo;
 
         if (!gm.HasPlayerGotASecondary())
@@ -79,7 +79,7 @@ public class Wallbuy : MonoBehaviour
     {
         if (wm.GetCurrentWeapon().reservedAmmo != wm.GetCurrentWeapon().maxReservedAmmo && wm.GetCurrentWeapon() == weapon)
         {
-            gm.playerScore -= ammoCost;
+            gm.playerScore -= (int)ammoCost;
             weapon.reservedAmmo = weapon.maxReservedAmmo;
         }
     }

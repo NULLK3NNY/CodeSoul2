@@ -1,5 +1,3 @@
-using System.Runtime.InteropServices.WindowsRuntime;
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -13,11 +11,16 @@ public class GameManager : MonoBehaviour
     public int perkLimit;
     // Player
     Player player;
+    // DDA
+    DDA dda;
 
     private void Awake()
     {
         // Get Player
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        // Get DDA
+        dda = gameObject.GetComponent<DDA>();
     }
 
     private void Start()
@@ -68,6 +71,6 @@ public class GameManager : MonoBehaviour
 
     public void RewardPointsOnKill()
     {
-        playerScore += 60; 
+        playerScore += 60 * (int)dda.DDA_DiscountMultiplier; 
     }
 }
