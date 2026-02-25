@@ -71,6 +71,6 @@ public class GameManager : MonoBehaviour
 
     public void RewardPointsOnKill()
     {
-        playerScore += 60 * (int)dda.DDA_DiscountMultiplier; 
+        playerScore += 60;
     }
 }
