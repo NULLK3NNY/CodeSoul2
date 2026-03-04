@@ -6,7 +6,7 @@ public class PerkUI : MonoBehaviour
     public Perk perk;
     public GameObject perkIcon;
 
-    private void Start()
+    private void Awake()
     {
         AddPerkIconToUI(perk);
     }

@@ -28,6 +28,7 @@ public class WeaponManager : MonoBehaviour
     float gunReloadTimer;
     // Bool
     bool isReloading;
+    bool unarmed;
 
     private void Start()
     {
@@ -85,13 +86,30 @@ public class WeaponManager : MonoBehaviour
         // Swap weapons
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            unarmed = false;
             currentWeaponSlot = 0;
+            isReloading = false;
+            player.animator.SetBool("IsReloading", false);
+            //player.animator.SetBool("IsSwapping", true);
+            player.animator.Play("Swap Weapon");
             EquipWeapon(currentWeaponSlot);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            unarmed = false;
             currentWeaponSlot = 1;
+            isReloading = false;
+            player.animator.SetBool("IsReloading", false);
+            //player.animator.SetBool("IsSwapping", true);
+            player.animator.Play("Swap Weapon");
             EquipWeapon(currentWeaponSlot);
+        }
+
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            DeEquip();
+            currentHeldWeapon = null;
+            unarmed = true;
         }
 
         // Update UI

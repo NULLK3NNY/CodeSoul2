@@ -33,16 +33,14 @@ public class Wallbuy : MonoBehaviour
 
     private void Update()
     {
-        if (inRange && Input.GetKeyDown(KeyCode.F))
+        if (inRange && Input.GetKeyDown(KeyCode.F) && gm.playerScore >= cost && !gm.HasPlayerGotThisWeapon(weapon))
         {
-            if (gm.HasPlayerGotThisWeapon(weapon))
-            {
-                PurchaseAmmo(weapon);
-            }
-            else
-            {
-                Purchase(weapon);
-            }
+            Purchase(weapon);
+        }
+
+        if (inRange && Input.GetKeyDown(KeyCode.F) && gm.playerScore >= ammoCost && gm.HasPlayerGotThisWeapon(weapon))
+        {
+            PurchaseAmmo(weapon);
         }
 
         UpdateDisplayText();
