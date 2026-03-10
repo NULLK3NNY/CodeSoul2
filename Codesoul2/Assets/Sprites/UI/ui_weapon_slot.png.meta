@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 06114d88006ecf84e8a6951aa8312675
+guid: a083319f357543d4a89fe31c0821b055
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3219016370294526487
-    second: m240_ChalkOutline_0
+      213: 8935017891504379130
+    second: ui_weapon_slot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: m240_ChalkOutline_0
+      name: ui_weapon_slot_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 77
-        height: 30
+        x: 0
+        y: 0
+        width: 180
+        height: 70
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ed6d629aa1c353d0800000000000000
-      internalID: -3219016370294526487
+      spriteID: af4d0ecbe6f8ffb70800000000000000
+      internalID: 8935017891504379130
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b9a77e02a3f549947ad287f249af8c07
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      m240_ChalkOutline_0: -3219016370294526487
+      ui_weapon_slot_0: 8935017891504379130
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

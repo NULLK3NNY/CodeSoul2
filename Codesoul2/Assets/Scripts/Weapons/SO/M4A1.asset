@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: M4A1
   m_EditorClassIdentifier: 
   weaponSprite: {fileID: 1011632807467738149, guid: b2527d6989b3a6742ba907259fb79a0b, type: 3}
-  weaponChalkSprite: {fileID: -4238979975836084776, guid: 5eb99320f23cba740b996713c6247503, type: 3}
+  weaponChalkSprite: {fileID: -2734431974489144803, guid: 60e82234001baaf429c1cdf5b8357ace, type: 3}
   weaponName: M4A1
   damage: 20
-  ammoInMag: 30
+  ammoInMag: 24
   maxMagAmount: 30
   reservedAmmo: 120
   maxReservedAmmo: 120
-  reloadTime: 5
+  reloadTime: 6
   firerate: 0.1
   isOneHanded: 0
   isSemiAutomatic: 0

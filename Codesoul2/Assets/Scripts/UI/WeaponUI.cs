@@ -12,10 +12,10 @@ public class WeaponUI : MonoBehaviour
 
     public void UpdatePrimary(Weapon weapon)
     {
-        if(weapon != null)
+        if (weapon != null)
         {
             weaponName.text = weapon.weaponName;
-            weaponSprite.sprite = weapon.weaponSprite;
+            weaponSprite.sprite = weapon.weaponChalkSprite;
             weaponMagCount.text = weapon.ammoInMag.ToString();
             weaponReserveCount.text = weapon.reservedAmmo.ToString();
         }

@@ -9,30 +9,21 @@ using UnityEngine.TextCore.Text;
 public class MysteryBox : MonoBehaviour
 {
     GameManager gameManager;
-
     [SerializeField] Weapon[] weaponsInBox;
     [SerializeField] Weapon[] upgradedWeapons;
-
     [SerializeField] WeaponManager weaponManager;
-
     Animator animator;
     public GameObject weaponSprite;
-
     bool inRange;
     bool canGrabWeapon;
     public bool opened = false;
     public bool dupeDetected = false;
-
     public Weapon boxWeapon;
-
     public float timer;
     public int pickUpTime = 5;
-
     public float boxTimer;
     public int timeUntilCanOpenBox = 2;
-
     public int price;
-
     [SerializeField] GameObject interactPrompt;
     [SerializeField] TMP_Text interactText;
 

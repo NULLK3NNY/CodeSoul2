@@ -27,23 +27,11 @@ public class Player : Entity
         FlipSelf();
         MoveHead();
         WalkBackwards();
+        HandleCrouching();
+        MoveGunAndArms();
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = mousePosition - transform.position;
-
-        if(Input.GetKeyDown(KeyCode.LeftControl) && !isCrouched)
-        {
-            isCrouched = true;
-        }
-        else if(Input.GetKeyDown(KeyCode.LeftControl) && isCrouched)
-        {
-            isCrouched = false;
-        }
-
-        if (isWeaponEquipped)
-        {
-            MoveGunAndArms();
-        }
     }
 
     private void FixedUpdate()
@@ -141,13 +129,28 @@ public class Player : Entity
 
     void MoveGunAndArms()
     {
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        arms.transform.rotation = Quaternion.Euler(0, 0, angle);
+        if(isWeaponEquipped)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            arms.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
     void MoveHead()
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         head.transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    void HandleCrouching()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !isCrouched)
+        {
+            isCrouched = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftControl) && isCrouched)
+        {
+            isCrouched = false;
+        }
     }
 }

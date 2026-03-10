@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: M240
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   weaponSprite: {fileID: 9079983674325913988, guid: 95c2ba31dffc50143a230d6bd31a93c3, type: 3}
-  weaponChalkSprite: {fileID: -3219016370294526487, guid: 06114d88006ecf84e8a6951aa8312675, type: 3}
+  weaponChalkSprite: {fileID: 5471815424093462020, guid: f9df6ce04a2593a47bc07243c5682d02, type: 3}
   weaponName: M240
   damage: 25
   ammoInMag: 100
   maxMagAmount: 100
-  reservedAmmo: 560
+  reservedAmmo: 600
   maxReservedAmmo: 600
   reloadTime: 8
   firerate: 0.1

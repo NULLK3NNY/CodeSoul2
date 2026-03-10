@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 767196e4b714e664795022e10478e711
+guid: 60e82234001baaf429c1cdf5b8357ace
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5131277146453931681
-    second: M4A1_ChalkOutline_0
+      213: -2734431974489144803
+    second: wb_combat_rifle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: M4A1_ChalkOutline_0
+      name: wb_combat_rifle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 16
+        width: 80
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a67776c065f53740800000000000000
-      internalID: 5131277146453931681
+      spriteID: d12ca1a5b985d0ad0800000000000000
+      internalID: -2734431974489144803
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 005b5c1ed5949c5448f8080c0bbfd473
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      M4A1_ChalkOutline_0: 5131277146453931681
+      wb_combat_rifle_0: -2734431974489144803
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
