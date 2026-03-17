@@ -21,7 +21,7 @@ public class Wallbuy : MonoBehaviour
     {
         // Get script references
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        ui = GameObject.FindGameObjectWithTag("InteractUI").GetComponent<InteractUI>();
+        ui = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<InteractUI>();
         wm = GameObject.FindGameObjectWithTag("Player").GetComponent<WeaponManager>();
     }
 

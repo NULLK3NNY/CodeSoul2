@@ -16,12 +16,12 @@ MonoBehaviour:
   weaponChalkSprite: {fileID: -3068790151218578212, guid: 1bc738de13e03134f8e6f9f31103e921, type: 3}
   weaponName: SE23
   damage: 15
-  ammoInMag: 7
+  ammoInMag: 8
   maxMagAmount: 8
-  reservedAmmo: 73
+  reservedAmmo: 80
   maxReservedAmmo: 80
   reloadTime: 5
-  firerate: 0.45
+  firerate: 0.5
   isOneHanded: 1
   isSemiAutomatic: 1
   animationSpeed: 1

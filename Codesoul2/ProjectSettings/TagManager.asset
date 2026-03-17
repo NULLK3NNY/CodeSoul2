@@ -7,8 +7,8 @@ TagManager:
   - Enemy
   - Bullet
   - GameManager
-  - InteractUI
   - Wallbuy
+  - UI
   layers:
   - Default
   - TransparentFX

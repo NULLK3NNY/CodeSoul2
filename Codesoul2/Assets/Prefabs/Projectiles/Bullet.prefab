@@ -112,7 +112,7 @@ SpriteRenderer:
   m_SortingOrder: 6
   m_MaskInteraction: 0
   m_Sprite: {fileID: -621836599822982148, guid: 20101f3430e3dad4fb82e743d55d5bd3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -171,6 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 35
-  destroyTime: 5
+  destroyTime: 0.5
   damageCounter: {fileID: 58899006721630440, guid: cbd857a9bd1e1a444a35b57331e904d5, type: 3}
   velocity: {x: 0, y: 0, z: 0}

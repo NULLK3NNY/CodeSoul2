@@ -4,9 +4,9 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     // Reference to UI
-    [SerializeField] WeaponUI weaponUI;
+    WeaponUI weaponUI;
     // Reference to audio manager
-    [SerializeField] AudioManager audioManager;
+    AudioManager audioManager;
     // Entity
     [SerializeField] Player player;
     RuntimeAnimatorController defaultController;
@@ -28,10 +28,11 @@ public class WeaponManager : MonoBehaviour
     float gunReloadTimer;
     // Bool
     bool isReloading;
-    bool unarmed;
 
     private void Start()
     {
+        weaponUI = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<WeaponUI>();
+        audioManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioManager>();
         defaultController = player.animator.runtimeAnimatorController;
         currentWeaponSlot = 0;
         currentHeldWeapon = weapons[currentWeaponSlot];
@@ -73,6 +74,7 @@ public class WeaponManager : MonoBehaviour
     public void FireWeapon()
     {
         player.animator.SetBool("IsShooting", true);
+        //player.animator.Play("Shoot");
         DepleteAmmo(currentHeldWeapon);
 
         GameObject defaultBullet = Instantiate(currentHeldWeapon.projectile, weaponFirepoint.transform.position, Quaternion.identity);
@@ -86,7 +88,6 @@ public class WeaponManager : MonoBehaviour
         // Swap weapons
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            unarmed = false;
             currentWeaponSlot = 0;
             isReloading = false;
             player.animator.SetBool("IsReloading", false);
@@ -96,7 +97,6 @@ public class WeaponManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            unarmed = false;
             currentWeaponSlot = 1;
             isReloading = false;
             player.animator.SetBool("IsReloading", false);
@@ -109,7 +109,6 @@ public class WeaponManager : MonoBehaviour
         {
             DeEquip();
             currentHeldWeapon = null;
-            unarmed = true;
         }
 
         // Update UI
