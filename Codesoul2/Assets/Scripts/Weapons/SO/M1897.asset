@@ -18,14 +18,14 @@ MonoBehaviour:
   damage: 32
   ammoInMag: 12
   maxMagAmount: 12
-  reservedAmmo: 40
+  reservedAmmo: 5
   maxReservedAmmo: 40
-  reloadTime: 6
+  reloadTime: 9
   firerate: 1
   isOneHanded: 0
   isSemiAutomatic: 0
   animationSpeed: 1
   projectile: {fileID: 825735333412919030, guid: 75840390b1ddc554883f8ebd0f8d5b62, type: 3}
   weaponAnimOverride: {fileID: 22100000, guid: 7fe5fd9523ec9334a8d38a0f72abfee2, type: 2}
-  shotSFX: {fileID: 8300000, guid: fe710c4b048a1ba4dbe0d17952af8ed6, type: 3}
+  shotSFX: {fileID: 8300000, guid: 14ec1d62fc661ab4ca91d4a8e7df3fb6, type: 3}
   noAmmoSFX: {fileID: 8300000, guid: 5def8e7ed373dd040874f456f057b126, type: 3}
