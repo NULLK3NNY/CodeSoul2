@@ -200,6 +200,8 @@ public class MysteryBox : MonoBehaviour
                     interactPrompt.SetActive(false);
                 }
             }
+
+
         }
     }
 
