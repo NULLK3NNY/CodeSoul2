@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a0765c6ae89a26a48b44909cd3938519
+guid: 8491a47c1a4ce6d4b954778ba823e787
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6987895499027559521
-    second: wb_battle_rifle_0
+      213: -3200004798483727998
+    second: weapon_slot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wb_battle_rifle_0
+      name: weapon_slot_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
-        width: 64
-        height: 24
+        y: 0
+        width: 544
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9b49ec2112060f90800000000000000
-      internalID: -6987895499027559521
+      spriteID: 289f4d2179c4793d0800000000000000
+      internalID: -3200004798483727998
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      wb_battle_rifle_0: -6987895499027559521
+      weapon_slot_0: -3200004798483727998
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using NUnit.Framework.Interfaces;
 using UnityEngine;
+using UnityEditor.UI;
+using TMPro;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -14,6 +17,14 @@ public class Inventory : MonoBehaviour
     // Example item pickup and inventory toggle
     public ItemData testItem;
 
+    // Inventory slots
+    public GameObject[] slotsUI;
+
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
         ShowInventoryUI();
@@ -21,7 +32,7 @@ public class Inventory : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             // Example item pickup
-            var itemToAdd = Resources.Load<ItemData>("ExampleItem");
+            var itemToAdd = testItem;
             if (AddItem(itemToAdd))
             {
                 Debug.Log("Item added to inventory!");
@@ -69,15 +80,6 @@ public class Inventory : MonoBehaviour
         {
             isInventoryOpen = false;
             inventoryUI.SetActive(false);
-        }
-
-        // Show items
-        for (int i = 0; i < items.Count; i++)
-        {
-            var slot = inventoryUI.transform.GetChild(i);
-            var item = items[i];
-            slot.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = item.data.itemSprite;
-            slot.GetChild(1).GetComponent<UnityEngine.UI.Text>().text = item.quantity > 1 ? item.quantity.ToString() : "";
         }
     }
 }

@@ -10,8 +10,4 @@ public class ItemData : ScriptableObject
     public string itemDescription;
     public bool canStack;
     public int maxStackSize;
-
-    public virtual void Use() { }
-    public virtual bool CanCombine(ItemData other) => false;
-    public virtual ItemData Combine(ItemData other) => null;
 }
