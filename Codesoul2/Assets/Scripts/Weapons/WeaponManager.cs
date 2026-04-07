@@ -111,12 +111,6 @@ public class WeaponManager : MonoBehaviour
             currentHeldWeapon = null;
         }
 
-        // Update UI
-        if (DoesPlayerHaveAWeaponInSlot(0))
-        {
-            weaponUI.UpdatePrimary(currentHeldWeapon);
-        }
-
         // Ammo
         if (currentHeldWeapon != null)
         {
