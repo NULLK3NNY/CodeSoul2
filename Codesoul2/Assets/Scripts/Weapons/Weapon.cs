@@ -21,6 +21,7 @@ public class Weapon : ScriptableObject
     public bool isOneHanded; // Determine where we should place the gun on the hip or back of the character
     public bool isSemiAutomatic;
     public float animationSpeed; // Set the animation speed for the weapon animations
+    public ItemData ammoType;
 
     // Weapon Components
     [Header("Weapon Components")]

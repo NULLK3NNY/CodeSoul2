@@ -60,6 +60,19 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
+    public InventoryItem GetItemInInventory(string itemName)
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i].data.itemName == itemName)
+            {
+                return items[i];
+            }
+        }
+
+        return null;
+    }
+
     public void ShowInventoryUI()
     {
         // Open and close inventory
@@ -73,8 +86,17 @@ public class Inventory : MonoBehaviour
             {
                 if (i < maxSlots)
                 {
-                    slotsUI[i].GetComponent<InventorySlotUI>().SetItem(items[i].data);
-                    slotsUI[i].GetComponent<InventorySlotUI>().RefreshSlot(items[i]);
+                    if (items[i].quantity <= 0)
+                    {
+                        items.Remove(items[i]);
+                        slotsUI[i].GetComponent<InventorySlotUI>().SetItem(null);
+                    }
+                    else
+                    {
+                        slotsUI[i].GetComponent<InventorySlotUI>().SetItem(items[i].data);
+                        slotsUI[i].GetComponent<InventorySlotUI>().RefreshSlot(items[i]);
+                    }
+                        
                 }
             }
         }

@@ -126,11 +126,16 @@ public class WeaponManager : MonoBehaviour
             }
         }
         
-        if (Input.GetKeyDown(KeyCode.R) && currentHeldWeapon.ammoInMag < currentHeldWeapon.maxMagAmount && currentHeldWeapon.reservedAmmo != 0)
+        if(inventory.GetItemInInventory(currentHeldWeapon.ammoType.itemName) != null && inventory.GetItemInInventory(currentHeldWeapon.ammoType.itemName).quantity > 0)
         {
-            isReloading = true;
-            player.animator.SetBool("IsReloading", true);
+            if (Input.GetKeyDown(KeyCode.R) && currentHeldWeapon.ammoInMag < currentHeldWeapon.maxMagAmount)
+            {
+                isReloading = true;
+                player.animator.SetBool("IsReloading", true);
+            }
         }
+
+        
 
         if (isReloading)
         {
@@ -160,10 +165,16 @@ public class WeaponManager : MonoBehaviour
 
     void Reload(Weapon currentWeapon) 
     {
-        int neededAmmo = currentWeapon.maxMagAmount - currentWeapon.ammoInMag;
-        int ammoToReload = Mathf.Min(neededAmmo, currentWeapon.reservedAmmo);
-        currentWeapon.reservedAmmo -= ammoToReload;
-        currentWeapon.ammoInMag += ammoToReload;
+        for (int i = 0; i < inventory.items.Count; i++)
+        {
+            if (inventory.items[i].data.itemName == currentHeldWeapon.ammoType.itemName)
+            {
+                int neededAmmo = currentWeapon.maxMagAmount - currentWeapon.ammoInMag;
+                int ammoToReload = Mathf.Min(neededAmmo, inventory.items[i].quantity);
+                inventory.items[i].quantity -= ammoToReload;
+                currentWeapon.ammoInMag += ammoToReload;
+            }
+        }
     }
 
     bool DoesPlayerHaveAWeaponInSlot(int slot)

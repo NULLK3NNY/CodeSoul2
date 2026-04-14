@@ -25,6 +25,7 @@ MonoBehaviour:
   isOneHanded: 0
   isSemiAutomatic: 0
   animationSpeed: 1
+  ammoType: {fileID: 0}
   projectile: {fileID: 825735333412919030, guid: 75840390b1ddc554883f8ebd0f8d5b62, type: 3}
   weaponAnimOverride: {fileID: 22100000, guid: 7fe5fd9523ec9334a8d38a0f72abfee2, type: 2}
   shotSFX: {fileID: 8300000, guid: 14ec1d62fc661ab4ca91d4a8e7df3fb6, type: 3}
