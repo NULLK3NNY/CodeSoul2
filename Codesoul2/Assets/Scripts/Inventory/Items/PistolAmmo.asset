@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventoryItem
   itemSprite: {fileID: 958261756159497674, guid: d942195608f6dd4408da587959d93682, type: 3}
   itemName: pistol_ammo
+  itemDescription: 
+  canStack: 1
+  maxStackSize: 0

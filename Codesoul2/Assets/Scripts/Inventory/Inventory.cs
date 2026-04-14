@@ -29,18 +29,10 @@ public class Inventory : MonoBehaviour
     {
         ShowInventoryUI();
 
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            // Example item pickup
-            var itemToAdd = testItem;
-            if (AddItem(itemToAdd))
-            {
-                Debug.Log("Item added to inventory!");
-            }
-            else
-            {
-                Debug.Log("Inventory is full!");
-            }
+            AddItem(testItem);
+            Debug.Log("Added Item: " + testItem.itemName);
         }
     }
 
@@ -75,6 +67,16 @@ public class Inventory : MonoBehaviour
         {
             isInventoryOpen = true;
             inventoryUI.SetActive(true);
+
+            // Show Items
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (i < maxSlots)
+                {
+                    slotsUI[i].GetComponent<InventorySlotUI>().SetItem(items[i].data);
+                    slotsUI[i].GetComponent<InventorySlotUI>().RefreshSlot(items[i]);
+                }
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && isInventoryOpen)
         {

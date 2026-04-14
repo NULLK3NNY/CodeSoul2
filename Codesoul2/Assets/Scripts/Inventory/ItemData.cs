@@ -1,5 +1,6 @@
 using NUnit.Framework.Interfaces;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "NewItemData", menuName = "ScriptableObjects/ItemData")]
 public class ItemData : ScriptableObject

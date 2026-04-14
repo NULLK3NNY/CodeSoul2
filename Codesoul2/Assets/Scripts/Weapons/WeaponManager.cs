@@ -23,6 +23,8 @@ public class WeaponManager : MonoBehaviour
     // Player limbs
     [SerializeField] GameObject head;
     [SerializeField] GameObject arms;
+    // Player Inventory
+    [SerializeField] Inventory inventory;
     // Float
     float gunShotTimer;
     float gunReloadTimer;

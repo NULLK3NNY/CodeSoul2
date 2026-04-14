@@ -6,7 +6,7 @@ public class WeaponsList : MonoBehaviour
 
     private void Start()
     {
-        InitWeapons();
+        //InitWeapons();
     }
 
     void InitWeapons()
