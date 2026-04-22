@@ -19,9 +19,7 @@ public class InventorySlotUI : MonoBehaviour
     {
         if (itemData != null)
         {
-            itemImage.sprite = itemData.itemSprite;
-            itemImage.enabled = true;
-            if (itemData.canStack && item.quantity > 1)
+            if (itemData.canStack && item.quantity > 0)
             {
                 quantityText.text = item.quantity.ToString();
                 quantityText.enabled = true;
@@ -31,6 +29,12 @@ public class InventorySlotUI : MonoBehaviour
                 quantityText.enabled = false;
             }
         }
+    }
+
+    public void UnloadSlot()
+    {
+        itemImage.GetComponent<Image>().enabled = false;
+        quantityText.enabled = false;
     }
 
     public void SetItem(ItemData item)

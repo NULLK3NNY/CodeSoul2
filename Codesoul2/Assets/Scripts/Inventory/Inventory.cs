@@ -86,17 +86,18 @@ public class Inventory : MonoBehaviour
             {
                 if (i < maxSlots)
                 {
-                    if (items[i].quantity <= 0)
+                    if (items[i] != null && items[i].quantity <= 0)
                     {
-                        items.Remove(items[i]);
-                        slotsUI[i].GetComponent<InventorySlotUI>().SetItem(null);
+                        slotsUI[i].GetComponent<InventorySlotUI>().itemData = null;
+                        slotsUI[i].GetComponent<InventorySlotUI>().UnloadSlot();
                     }
-                    else
+
+                    if (items[i] != null)
                     {
                         slotsUI[i].GetComponent<InventorySlotUI>().SetItem(items[i].data);
                         slotsUI[i].GetComponent<InventorySlotUI>().RefreshSlot(items[i]);
                     }
-                        
+                    
                 }
             }
         }

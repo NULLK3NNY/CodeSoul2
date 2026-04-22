@@ -125,13 +125,25 @@ public class WeaponManager : MonoBehaviour
                 gunReloadTimer += Time.deltaTime;
             }
         }
-        
-        if(inventory.GetItemInInventory(currentHeldWeapon.ammoType.itemName) != null && inventory.GetItemInInventory(currentHeldWeapon.ammoType.itemName).quantity > 0)
+
+        /*if(inventory.GetItemInInventory(currentHeldWeapon.ammoType.itemName) != null && inventory.GetItemInInventory(currentHeldWeapon.ammoType.itemName).quantity > 0)
         {
             if (Input.GetKeyDown(KeyCode.R) && currentHeldWeapon.ammoInMag < currentHeldWeapon.maxMagAmount)
             {
                 isReloading = true;
                 player.animator.SetBool("IsReloading", true);
+            }
+        }*/
+
+        if (Input.GetKeyDown(KeyCode.R) && currentHeldWeapon.ammoInMag < currentHeldWeapon.maxMagAmount)
+        {
+            if (inventory.GetItemInInventory(currentHeldWeapon.ammoType.itemName) != null)
+            {
+                if (inventory.GetItemInInventory(currentHeldWeapon.ammoType.itemName).quantity > 0)
+                {
+                    isReloading = true;
+                    player.animator.SetBool("IsReloading", true);
+                }
             }
         }
 
