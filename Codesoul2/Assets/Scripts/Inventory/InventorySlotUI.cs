@@ -19,6 +19,9 @@ public class InventorySlotUI : MonoBehaviour
     {
         if (itemData != null)
         {
+            itemImage.enabled = true;
+            itemImage.sprite = itemData.itemSprite;
+
             if (itemData.canStack && item.quantity > 0)
             {
                 quantityText.text = item.quantity.ToString();
@@ -26,6 +29,8 @@ public class InventorySlotUI : MonoBehaviour
             }
             else
             {
+                itemImage.sprite = null;
+                itemImage.enabled = false;
                 quantityText.enabled = false;
             }
         }

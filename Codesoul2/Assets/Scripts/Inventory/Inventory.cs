@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
 {
     public int maxSlots = 8;
     public List<InventoryItem> items = new();
+    public List<InventoryItem> itemsToRemove = new();
 
     // Inventory UI
     public GameObject inventoryUI;
@@ -16,6 +17,7 @@ public class Inventory : MonoBehaviour
 
     // Example item pickup and inventory toggle
     public ItemData testItem;
+    public ItemData shells;
 
     // Inventory slots
     public GameObject[] slotsUI;
@@ -33,6 +35,12 @@ public class Inventory : MonoBehaviour
         {
             AddItem(testItem);
             Debug.Log("Added Item: " + testItem.itemName);
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            AddItem(shells);
+            Debug.Log("Added Item: " + shells.itemName);
         }
     }
 
@@ -86,14 +94,13 @@ public class Inventory : MonoBehaviour
             {
                 if (i < maxSlots)
                 {
-                    if (items[i] != null && items[i].quantity <= 0)
-                    {
-                        slotsUI[i].GetComponent<InventorySlotUI>().itemData = null;
-                        slotsUI[i].GetComponent<InventorySlotUI>().UnloadSlot();
-                    }
-
                     if (items[i] != null)
                     {
+                        if (items[i].quantity <= 0)
+                        {
+                            items.Remove(items[i]);
+                        }
+
                         slotsUI[i].GetComponent<InventorySlotUI>().SetItem(items[i].data);
                         slotsUI[i].GetComponent<InventorySlotUI>().RefreshSlot(items[i]);
                     }

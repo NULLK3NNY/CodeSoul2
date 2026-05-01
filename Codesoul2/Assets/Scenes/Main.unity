@@ -2384,6 +2384,7 @@ MonoBehaviour:
   maxSlots: 8
   inventoryUI: {fileID: 610011076}
   testItem: {fileID: 11400000, guid: 31c7b94608dba464590fb797c1dac0c6, type: 2}
+  shells: {fileID: 11400000, guid: df1270c1f3c8376409c60b6015c393bc, type: 2}
   slotsUI:
   - {fileID: 1785440942}
   - {fileID: 1572278839}
