@@ -3,58 +3,62 @@ using UnityEngine;
 
 public class DDA : MonoBehaviour
 {
-    // Enable
-    public bool activated;
-    // Player reference
-    Player player;
-    WeaponManager weapon;
-    // Player variables
-    int playerHP;
-    double playerDeaths;
-    // Adjustable Variables
-    public double DDA_PointRewardMultiplier;
-    public double DDA_DiscountMultiplier;
-    // UI
-    public TMP_Text DDA_PlayerDeathTextCounter;
+    // Toggle
+    public bool isDDAEnabled = false;
 
-    private void Awake()
-    {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-    }
+    // DDA stats
+    float DDAMultiplier = 1.0f;
+    public float damageMultiplier = 1.0f;
+    public float healthMultiplier = 1.0f;
+
+    // Kills to death ratio
+    int deaths;
+    int kills;
+
+    public TMP_Text ddaStatsText;
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        DrawDDAStats();
+
+        if (Input.GetKeyDown(KeyCode.F1))
         {
-            playerDeaths++;
-            LowerPrices();
+            isDDAEnabled = !isDDAEnabled;
         }
 
-        if (activated)
+        if (Input.GetKeyDown(KeyCode.T))
         {
-            // Multipliers tied to player death count
-            DDA_DiscountMultiplier = playerDeaths * 0.05;
-            DDA_PointRewardMultiplier = playerDeaths * 0.05;
-
-            UpdateUI();
-        }
-        else
-        {
-
+            AddDeaths();
         }
     }
 
-    void UpdateUI()
+    private void DrawDDAStats()
     {
-        DDA_PlayerDeathTextCounter.text = "Deaths: " + playerDeaths.ToString();
+        ddaStatsText.text =
+            "DDA Stats:\n" +
+            "Damage Multiplier: " + damageMultiplier.ToString("F2") + "\n" +
+            "Health Multiplier: " + healthMultiplier.ToString("F2") + "\n" +
+            "Kills: " + kills + "\n" +
+            "Deaths: " + deaths + "\n";
     }
 
-    void LowerPrices()
+    void UpdateDDA()
     {
-        for (int i = 0; i < GameObject.FindGameObjectsWithTag("Wallbuy").Length; i++)
-        {
-            GameObject.FindGameObjectsWithTag("Wallbuy")[i].GetComponent<Wallbuy>().cost -= DDA_DiscountMultiplier;
-            GameObject.FindGameObjectsWithTag("Wallbuy")[i].GetComponent<Wallbuy>().ammoCost -= DDA_DiscountMultiplier;
-        }
+        DDAMultiplier = (deaths + 1.0f) / (kills + 1.0f);
+
+        damageMultiplier = Mathf.Clamp(DDAMultiplier, 0.8f, 2.0f);
+        healthMultiplier = Mathf.Clamp(DDAMultiplier, 0.8f, 2.0f);
+    }
+
+    public void AddDeaths()
+    {
+        deaths++;
+        UpdateDDA();
+    }
+
+    public void AddKills()
+    {
+        kills++;
+        UpdateDDA();
     }
 }

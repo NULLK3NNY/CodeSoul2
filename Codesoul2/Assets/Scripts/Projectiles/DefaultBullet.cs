@@ -5,6 +5,8 @@ using UnityEngine.UIElements;
 
 public class DefaultBullet : MonoBehaviour
 {
+    // DDA
+    DDA dda;
     Player player;
     WeaponManager weapon;
     Rigidbody2D rb;
@@ -19,6 +21,7 @@ public class DefaultBullet : MonoBehaviour
 
     private void Start()
     {
+        dda = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DDA>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         weapon = player.GetComponentInChildren<WeaponManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -42,6 +45,7 @@ public class DefaultBullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             float giveRandomDamage = Random.Range(bulletDamage, bulletDamage + 3);
+            giveRandomDamage *= dda.damageMultiplier;
 
             collision.gameObject.GetComponent<Enemy>().Hurt(giveRandomDamage);
 

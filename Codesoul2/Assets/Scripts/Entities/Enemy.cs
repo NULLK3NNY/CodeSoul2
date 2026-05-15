@@ -3,34 +3,52 @@ using UnityEngine.Rendering;
 
 public class Enemy : Entity
 {
+    DDA dda;
     GameManager gm;
     public float hp;
     public GameObject attackCollision;
+    float timer = 0;
+    public float attackRate = 1;
 
     private void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        dda = gm.GetComponent<DDA>();
         hp = 100;
     }
 
     private void Update()
     {
+        timer += Time.deltaTime;
+
         FlipSelf(GameObject.FindGameObjectWithTag("Player"));
     }
 
     private void FixedUpdate()
     {
-        /*if (FindDistanceBetweenVectors(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position) > 2)
+        if (FindDistanceBetweenVectors(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position) > 10)
         {
             FollowTarget(GameObject.FindGameObjectWithTag("Player"));
         }
         else
         {
             animator.SetBool("IsMoving", false);
-        }*/
+        }
 
         FollowTarget(GameObject.FindGameObjectWithTag("Player"));
         CheckGround(isFacingRight);
+    }
+
+    bool CanAttack()
+    {
+        
+        if (timer >= attackRate)
+        {
+            timer = 0;
+            return true;
+        }
+
+        return false;
     }
 
     void FollowTarget(GameObject target)
@@ -94,6 +112,7 @@ public class Enemy : Entity
     {
         if(hp <= 0)
         {
+            dda.AddKills();
             gm.RewardPointsOnKill();
             Destroy(gameObject);
         }
@@ -104,6 +123,17 @@ public class Enemy : Entity
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player hit");
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if(CanAttack())
+            {
+                Debug.Log("Player hit");
+            }
         }
     }
 }

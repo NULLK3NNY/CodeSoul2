@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a84841284cbf9c144951b4e7fa2d6b66
+guid: e6d1f3c971a64c043a4040660ae2800f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3607075459210692904
-    second: shotgun_ammo_sprite_0
+      213: 2530564911472380330
+    second: button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shotgun_ammo_sprite_0
+      name: button_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 32
-        height: 28
+        y: 0
+        width: 48
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8294840e408ee0230800000000000000
-      internalID: 3607075459210692904
+      spriteID: aa90165216f5e1320800000000000000
+      internalID: 2530564911472380330
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      shotgun_ammo_sprite_0: 3607075459210692904
+      button_0: 2530564911472380330
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
